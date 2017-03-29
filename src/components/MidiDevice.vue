@@ -3,13 +3,13 @@
     <h2>Midi Device</h2>
     <div class="form-group">
       <label for="midi-out">Midi output</label>
-      <select id="midi-out" name="midi-out" v-model="selectedOutput">
+      <select id="midi-out" name="midi-out" v-model="selectedOutputId" @change="selectOutput">
         <option disabled value="">Please select one</option>
         <option v-for="output in midiOutputs" :value="output.id">
           {{ output.manufacturer }} {{ output.name }}
         </option>
       </select>
-      <button @click="playNote()">Play note</button>
+      <button @click="playNote()" v-if="midiOut">Play note</button>
     </div>
   </div>
 </template>
@@ -21,8 +21,9 @@ export default {
   name: "midi-device",
   data() {
     return {
-      selectedOutput: "",
+      selectedOutputId: "",
       midiOutputs: null,
+      midiOut: null
     }
   },
   mounted() {
@@ -32,8 +33,11 @@ export default {
   },
   methods: {
     playNote() {
-      const output = WebMidi.getOutputById(this.selectedOutput)
-      output.playNote("C3")
+      this.midiOut.playNote("C3")
+    },
+    selectOutput(event) {
+      const outputId = event.target.value
+      this.midiOut = WebMidi.getOutputById(outputId)
     }
   }
 }
