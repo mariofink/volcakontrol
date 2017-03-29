@@ -11,14 +11,21 @@
       </select>
       <button @click="playNote()" v-if="midiOut">Play note</button>
     </div>
+    <div v-if="midiOut">
+      <midi-parameter :midiout="midiOut" parameter="44" initvalue="100" label="Cutoff"></midi-parameter>
+    </div>
   </div>
 </template>
 
 <script>
   import WebMidi from "webmidi"
+  import MidiParameter from "./MidiParameter.vue"
 
 export default {
   name: "midi-device",
+  components: {
+    "midi-parameter": MidiParameter
+  },
   data() {
     return {
       selectedOutputId: "",
