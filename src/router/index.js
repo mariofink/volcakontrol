@@ -1,6 +1,6 @@
 import Vue from "vue"
 import Router from "vue-router"
-import MidiDevice from "@/components/MidiDevice"
+import VolcaKeys from "@/components/VolcaKeys.vue"
 
 Vue.use(Router)
 
@@ -8,8 +8,8 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "MidiDevice",
-      component: MidiDevice,
+      name: "VolcaKeys",
+      component: VolcaKeys,
     },
   ],
 })
