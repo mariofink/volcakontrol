@@ -12,38 +12,37 @@
     </div>
     <div v-if="midiOut">
       <fieldset>
-        <midi-parameter :midiout="midiOut" parameter="40" initvalue="0" label="Voice"></midi-parameter>
-        <midi-parameter :midiout="midiOut" parameter="41" initvalue="0" label="Octave"></midi-parameter>
-        <midi-parameter :midiout="midiOut" parameter="11" initvalue="0" label="Expression"></midi-parameter>
+        <midi-parameter :midiout="midiOut" parameter="40" label="Voice" steps="5"></midi-parameter>
+        <midi-parameter :midiout="midiOut" parameter="41" label="Octave" steps="5"></midi-parameter>
+        <midi-parameter :midiout="midiOut" parameter="11" label="Expression"></midi-parameter>
       </fieldset>
       <fieldset>
         <legend>VCO</legend>
-        <midi-parameter :midiout="midiOut" parameter="42" initvalue="0" label="Detune"></midi-parameter>
-        <midi-parameter :midiout="midiOut" parameter="5" initvalue="0" label="Portamento"></midi-parameter>
-        <midi-parameter :midiout="midiOut" parameter="43" initvalue="0" label="EG Int"></midi-parameter>
+        <midi-parameter :midiout="midiOut" parameter="42" label="Detune"></midi-parameter>
+        <midi-parameter :midiout="midiOut" parameter="5" label="Portamento"></midi-parameter>
+        <midi-parameter :midiout="midiOut" parameter="43" label="EG Int"></midi-parameter>
       </fieldset>
       <fieldset>
         <legend>VCF</legend>
-        <midi-parameter :midiout="midiOut" parameter="44" initvalue="100" label="Cutoff"></midi-parameter>
-        <midi-parameter :midiout="midiOut" parameter="52" initvalue="0" label="Delay"></midi-parameter>
-        <midi-parameter :midiout="midiOut" parameter="53" initvalue="0" label="Feedback"></midi-parameter>
+        <midi-parameter :midiout="midiOut" parameter="44" initvalue="127" label="Cutoff"></midi-parameter>
+        <midi-parameter :midiout="midiOut" parameter="45" initvalue="0" label="EG Int"></midi-parameter>
       </fieldset>
       <fieldset>
         <legend>LFO</legend>
-        <midi-parameter :midiout="midiOut" parameter="46" initvalue="0" label="Rate"></midi-parameter>
-        <midi-parameter :midiout="midiOut" parameter="47" initvalue="0" label="Pitch Int"></midi-parameter>
-        <midi-parameter :midiout="midiOut" parameter="48" initvalue="0" label="Cutoff Int"></midi-parameter>
+        <midi-parameter :midiout="midiOut" parameter="46" label="Rate"></midi-parameter>
+        <midi-parameter :midiout="midiOut" parameter="47" label="Pitch Int"></midi-parameter>
+        <midi-parameter :midiout="midiOut" parameter="48" label="Cutoff Int"></midi-parameter>
       </fieldset>
       <fieldset>
         <legend>EG</legend>
-        <midi-parameter :midiout="midiOut" parameter="49" initvalue="0" label="Attack"></midi-parameter>
-        <midi-parameter :midiout="midiOut" parameter="50" initvalue="0" label="Decay/Release"></midi-parameter>
-        <midi-parameter :midiout="midiOut" parameter="51" initvalue="0" label="Sustain"></midi-parameter>
+        <midi-parameter :midiout="midiOut" parameter="49" label="Attack"></midi-parameter>
+        <midi-parameter :midiout="midiOut" parameter="50" label="Decay/Release"></midi-parameter>
+        <midi-parameter :midiout="midiOut" parameter="51" label="Sustain"></midi-parameter>
       </fieldset>
       <fieldset>
         <legend>Delay</legend>
-        <midi-parameter :midiout="midiOut" parameter="52" initvalue="0" label="Time"></midi-parameter>
-        <midi-parameter :midiout="midiOut" parameter="53" initvalue="0" label="Feedback"></midi-parameter>
+        <midi-parameter :midiout="midiOut" parameter="52" label="Time"></midi-parameter>
+        <midi-parameter :midiout="midiOut" parameter="53" label="Feedback"></midi-parameter>
       </fieldset>
     </div>
   </div>

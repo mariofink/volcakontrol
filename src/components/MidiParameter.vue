@@ -1,7 +1,7 @@
 <template>
   <div>
     <label>{{label}}</label>
-    <input type="range" min="0" max="127" :value="value" @input="updateValue">
+    <input type="range" min="0" max="127" :value="value" :step="Math.floor(127 / steps)" @input="updateValue">
   </div>
 </template>
 
@@ -13,7 +13,17 @@
         value: 0
       }
     },
-    props: ["parameter", "initvalue", "midiout", "label"],
+    props: {
+      parameter: {},
+      initvalue: {
+        default: 0
+      },
+      midiout: Object,
+      label: String,
+      steps: {
+        default: 127
+      }
+    },
     created() {
       this.value = this.initvalue
     },
